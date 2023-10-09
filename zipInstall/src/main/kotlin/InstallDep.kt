@@ -1,8 +1,36 @@
 import java.io.File
 
 
-fun aa() {
+fun main() {
+    InsallSol()
+    installPy()
+    installPip1()
+    installPip2()
 
+
+
+
+}
+
+fun installPip2(){
+    val nomeBash = "InstalarPip.bat"
+
+    var arqBash = File(nomeBash)
+    arqBash.writeText(
+        "@\"%SystemRoot%\\System32\\WindowsPowerShell\\v1.0\\powershell.exe\" -NoProfile -InputFormat None -ExecutionPolicy Bypass -Command \"iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))\" && SET \"PATH=%PATH%;%ALLUSERSPROFILE%\\chocolatey\\bin\"\n\n" +
+                "choco install python311 --params \"/C:\\Users\\Public\""
+    )
+}
+fun installPy() {
+    val nomeBash = "InstalarPython.bat"
+
+    var arqBash = File(nomeBash)
+    arqBash.writeText(
+        "@\"%SystemRoot%\\System32\\WindowsPowerShell\\v1.0\\powershell.exe\" -NoProfile -InputFormat None -ExecutionPolicy Bypass -Command \"iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))\" && SET \"PATH=%PATH%;%ALLUSERSPROFILE%\\chocolatey\\bin\"\n\n" +
+                "choco install python311 --params \"/C:\\Users\\Public\""
+    )
+}
+fun InsallSol() {
     val nome = "CapturaDadosPy.py"
 
     var arqSol = File(nome)
@@ -218,6 +246,6 @@ fun aa() {
                 "    time.sleep(20)"
     )
 }
-
-
-
+installPip1(){
+    
+}
